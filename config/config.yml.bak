@@ -16,30 +16,12 @@ record:
     days: 0
   motion:
     days: 3
-
-go2rtc:
-  streams:
-    sim_green_overlay_106:
-      - "ffmpeg:rtsp://admin:T-Rwh8GOxt@192.168.67.106:554/cam/realmonitor?channel=1&subtype=0#video=h264#raw=-vf colorchannelmixer=0:1:0:0:0:1:0:0:0:1:0:0"
-
-    sim_frozen_103:
-      - "ffmpeg:#input=-f lavfi -i color=size=1920x1080:rate=5:color=gray50#video=h264"
-
-    sim_low_bitrate_102:
-      - "ffmpeg:rtsp://admin:T-Rwh8GOxt@192.168.67.102:554/cam/realmonitor?channel=1&subtype=0#video=h264#raw=-b:v 128k -maxrate 128k -bufsize 64k"
-
-    sim_partial_obstruction_110:
-      - "ffmpeg:rtsp://admin:T-Rwh8GOxt@192.168.67.110:554/cam/realmonitor?channel=1&subtype=0#video=h264#raw=-vf drawbox=x=0:y=0:w=960:h=1080:color=black@0.85:t=fill"
-
-    sim_black_screen_105:
-      - "ffmpeg:#input=-f lavfi -i color=size=1920x1080:rate=5:color=black#video=h264"
-
 cameras:
   cam_192_168_67_106:
     ffmpeg:
       inputs:
-        - path: rtsp://127.0.0.1:8554/sim_green_overlay_106
-          input_args: preset-rtsp-restream
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.106:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - detect
             - record
@@ -51,8 +33,8 @@ cameras:
   cam_192_168_67_103:
     ffmpeg:
       inputs:
-        - path: rtsp://127.0.0.1:8554/sim_frozen_103
-          input_args: preset-rtsp-restream
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.103:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - detect
             - record
@@ -64,8 +46,8 @@ cameras:
   cam_192_168_67_102:
     ffmpeg:
       inputs:
-        - path: rtsp://127.0.0.1:8554/sim_low_bitrate_102
-          input_args: preset-rtsp-restream
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.102:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - detect
             - record
@@ -90,8 +72,8 @@ cameras:
   cam_192_168_67_110:
     ffmpeg:
       inputs:
-        - path: rtsp://127.0.0.1:8554/sim_partial_obstruction_110
-          input_args: preset-rtsp-restream
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.110:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - detect
             - record
@@ -103,8 +85,8 @@ cameras:
   cam_192_168_67_105:
     ffmpeg:
       inputs:
-        - path: rtsp://127.0.0.1:8554/sim_black_screen_105
-          input_args: preset-rtsp-restream
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.105:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - detect
             - record
