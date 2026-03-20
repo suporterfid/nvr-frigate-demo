@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  frigate:
+    container_name: frigate
+    image: ghcr.io/blakeblackshear/frigate:stable
+    restart: unless-stopped
+    network_mode: host
+    privileged: false
+    environment:
+      FRIGATE_RTSP_PASSWORD: "password"
+      TZ: "Etc/UTC"
+    volumes:
+      - ./config:/config
+      - ./media:/media/frigate
+      - /dev/bus/usb:/dev/bus/usb
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
+    shm_size: "256mb"
+    tmpfs:
+      - /tmp/cache:size=256m

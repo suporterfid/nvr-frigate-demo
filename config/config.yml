@@ -1,0 +1,137 @@
+mqtt:
+  enabled: false
+
+ffmpeg:
+  hwaccel_args:
+    - -hwaccel
+    - vaapi
+    - -hwaccel_device
+    - /dev/dri/renderD128
+    - -hwaccel_output_format
+    - yuv420p
+
+record:
+  enabled: true
+  continuous:
+    days: 0
+  motion:
+    days: 3
+cameras:
+  cam_192_168_67_106:
+    ffmpeg:
+      inputs:
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.106:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+            - record
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
+
+  cam_192_168_67_103:
+    ffmpeg:
+      inputs:
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.103:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+            - record
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
+
+  cam_192_168_67_102:
+    ffmpeg:
+      inputs:
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.102:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+            - record
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
+
+  cam_192_168_67_100:
+    ffmpeg:
+      inputs:
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.100:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+            - record
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
+
+  cam_192_168_67_110:
+    ffmpeg:
+      inputs:
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.110:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+            - record
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
+
+  cam_192_168_67_105:
+    ffmpeg:
+      inputs:
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.105:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+            - record
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
+
+  cam_192_168_67_113:
+    ffmpeg:
+      inputs:
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.113:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+            - record
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
+
+  cam_192_168_67_112:
+    ffmpeg:
+      inputs:
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.112:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+            - record
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
+
+  cam_192_168_67_108:
+    ffmpeg:
+      inputs:
+        - path: 
+            rtsp://admin:T-Rwh8GOxt@192.168.67.108:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+            - record
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
+
+version: 0.17-0
